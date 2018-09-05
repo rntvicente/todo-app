@@ -1,0 +1,56 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "todo",
+  "main": "src/loader.js",
+  "scripts": {
+    "lint": "eslint src/loader.js",
+    "start": "DEBUG=server,server:* nodemon src/loader.js",
+    "production": "pm2 start src/loader.js --name todo-app"
+  },
+  "engines": {
+    "node": "8.11.3"
+  },
+  "bugs": {
+    "url": "https://github.com/rntvicente/todo-app/issues"
+  },
+  "homepage": "https://github.com/rntvicente/todo-app#readme",
+  "keywords": [
+    "javascript",
+    "nodemon",
+    "express",
+    "mongoose",
+    "eslint",
+    "debug",
+    "chalk",
+    "mongolab",
+    "restful"
+  ],
+  "author": "Renato Vicente",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chalk": "^2.4.1",
+    "debug": "^3.1.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.0",
+    "morgan": "^1.9.0",
+    "node-restful": "^0.2.5",
+    "pm2": "^2.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.13.0"
+  },
+  "restartable": "rs",
+  "ignore": [
+    "node_modules/**/node_modules"
+  ],
+  "delay": "2500",
+  "env": {
+    "PORT": 4000,
+    "NODE_ENV": "development"
+  }
+}
