@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const debug = require('debug')('server:database');
 
+mongoose.Promise = global.Promise;
 const uri = 'mongodb://todoApp:todoapp1@ds231720.mlab.com:31720/todo-app';
 const options = {
   useMongoClient: true,

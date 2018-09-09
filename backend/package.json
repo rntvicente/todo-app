@@ -5,6 +5,7 @@
   "main": "src/loader.js",
   "scripts": {
     "lint": "eslint src/loader.js",
+    "depcheck": "./node_modules/.bin/depcheck",
     "start": "DEBUG=server,server:* nodemon src/loader.js",
     "production": "pm2 start src/loader.js --name todo-app"
   },
@@ -39,10 +40,11 @@
     "pm2": "^2.1.5"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
+    "depcheck": "^0.6.11",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.13.0"
+    "eslint-plugin-import": "^2.13.0",
+    "nodemon": "^1.11.0"
   },
   "restartable": "rs",
   "ignore": [
