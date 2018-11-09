@@ -1,8 +1,12 @@
-import React from 'react'
-import Grid from '../template/grid'
-import IconButton from '../template/icon-button'
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default props => {
+import Grid from '../template/grid';
+import IconButton from '../template/icon-button';
+import { handleChange } from './todo-actions'
+
+const TodoForm = (props) => {
   const keyHandler = (e) => {
     if (e.key === 'Enter') {
       e.shiftKey ? props.handleSearch() : props.handleAdd()
@@ -29,3 +33,11 @@ export default props => {
     </div>
   )
 };
+
+const mapStateToProps = (state) => ({
+  description: state.todo.description
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({ handleChange }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);
