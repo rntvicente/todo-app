@@ -12,7 +12,7 @@ export const search = () => {
     const description = getState().todo.description;
     const search = (description ? `&description__regex=/${description}/` : '');
 
-    const request = axios.get(`${url}?sort=-createdAt`)
+    const request = axios.get(`${url}?sort=-createdAt${search}`)
       .then(res => dispatch({ type: 'TODO_SEARCHED', payload: res.data }));
   };
 };
