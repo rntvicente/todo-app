@@ -7,6 +7,7 @@
     "lint": "eslint src/loader.js",
     "depcheck": "./node_modules/.bin/depcheck",
     "start": "DEBUG=server,server:* nodemon src/loader.js",
+    "stop": "pm2 start src/loader.js --name todo-app",
     "production": "pm2 start src/loader.js --name todo-app"
   },
   "engines": {
